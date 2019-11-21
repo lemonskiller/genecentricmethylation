@@ -13,7 +13,7 @@ function [X1, y1] = removeBaseline(X, y)
 
 [numSamps, numProbes] = size(X);
 [idx] = find(y == 0);
-s = setxor(1:numSamps,idx);
+s = setxor(1:numSamps,idx); % setxor(A,B):求异或，得A-A∩B，A中B所没有的，在此为有！=0的所有样本id+
 X1 = X(s,:);
 y1 = y(s,1);
 end
