@@ -1,9 +1,10 @@
-function y= discretizeData(y0)
+function y= discretizeData(y0) 
+%% y0和它自己中位数（非nan）计算fold change
 %Data discretization method used for TCGA data in paper 
 %1.2 fold change wrt median
 %assumes log-transformed data
 y0 = 2.^(y0);
-[a,b] =  size(y0);
+[a,b] =  size(y0); %与b无关，计算y0的行数
 y = zeros(a,1);
 
 median = nanmedian(y0); %compute median of y0, ignoring nan values.  
