@@ -6,7 +6,7 @@ y0 = 2.^(y0);
 [a,b] =  size(y0);
 y = zeros(a,1);
 
-median = nanmedian(y0);
+median = nanmedian(y0); %compute median of y0, ignoring nan values.  
 
 y0 = log2(y0./median);
 
